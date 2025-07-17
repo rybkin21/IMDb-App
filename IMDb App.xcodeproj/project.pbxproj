@@ -6,47 +6,58 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B4E8336C2E22AB87004C1574 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8336B2E22AB87004C1574 /* SnapKit */; };
+		B4F463DC2E2969C50017ABBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F463C92E2969C50017ABBF /* Assets.xcassets */; };
+		B4F463DD2E2969C50017ABBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F463D42E2969C50017ABBF /* LaunchScreen.storyboard */; };
+		B4F463DE2E2969C50017ABBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F463CC2E2969C50017ABBF /* AppDelegate.swift */; };
+		B4F463DF2E2969C50017ABBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F463CD2E2969C50017ABBF /* SceneDelegate.swift */; };
+		B4F463E02E2969C50017ABBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F463D72E2969C50017ABBF /* ViewController.swift */; };
+		C4C059CE3CAA7829C39E0711 /* Pods_IMDb_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CD33321F628574B33F5E23 /* Pods_IMDb_App.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		031EC03BABD16C93B1032BE0 /* Pods-IMDb App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDb App.release.xcconfig"; path = "Target Support Files/Pods-IMDb App/Pods-IMDb App.release.xcconfig"; sourceTree = "<group>"; };
+		616B89E58B6FDD330FD259B8 /* Pods-IMDb App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDb App.debug.xcconfig"; path = "Target Support Files/Pods-IMDb App/Pods-IMDb App.debug.xcconfig"; sourceTree = "<group>"; };
 		B4E833522E22A969004C1574 /* IMDb App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IMDb App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4F463C72E2969C50017ABBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4F463C92E2969C50017ABBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4F463CC2E2969C50017ABBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4F463CD2E2969C50017ABBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B4F463D32E2969C50017ABBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B4F463D72E2969C50017ABBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9CD33321F628574B33F5E23 /* Pods_IMDb_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMDb_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B4E833642E22A96B004C1574 /* Exceptions for "IMDb App" folder in "IMDb App" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = B4E833512E22A969004C1574 /* IMDb App */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B4E833542E22A969004C1574 /* IMDb App */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				B4E833642E22A96B004C1574 /* Exceptions for "IMDb App" folder in "IMDb App" target */,
-			);
-			path = "IMDb App";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B4E8334F2E22A969004C1574 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E8336C2E22AB87004C1574 /* SnapKit in Frameworks */,
+				C4C059CE3CAA7829C39E0711 /* Pods_IMDb_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FAECD183CB565FF3897815F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				616B89E58B6FDD330FD259B8 /* Pods-IMDb App.debug.xcconfig */,
+				031EC03BABD16C93B1032BE0 /* Pods-IMDb App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B4E833492E22A969004C1574 = {
 			isa = PBXGroup;
 			children = (
-				B4E833542E22A969004C1574 /* IMDb App */,
+				B4F463DA2E2969C50017ABBF /* IMDb App */,
 				B4E833532E22A969004C1574 /* Products */,
+				6FAECD183CB565FF3897815F /* Pods */,
+				C2273017DFEB82DBA45D6135 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,123 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B4F463C82E2969C50017ABBF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B4F463C72E2969C50017ABBF /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B4F463CA2E2969C50017ABBF /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				B4F463C82E2969C50017ABBF /* Configuration */,
+				B4F463C92E2969C50017ABBF /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		B4F463CB2E2969C50017ABBF /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		B4F463CE2E2969C50017ABBF /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B4F463CD2E2969C50017ABBF /* SceneDelegate.swift */,
+				B4F463CC2E2969C50017ABBF /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		B4F463CF2E2969C50017ABBF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B4F463D02E2969C50017ABBF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B4F463D12E2969C50017ABBF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B4F463D22E2969C50017ABBF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B4F463D52E2969C50017ABBF /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B4F463D42E2969C50017ABBF /* LaunchScreen.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		B4F463D62E2969C50017ABBF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B4F463D82E2969C50017ABBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4F463D72E2969C50017ABBF /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4F463D92E2969C50017ABBF /* Sourses */ = {
+			isa = PBXGroup;
+			children = (
+				B4F463D82E2969C50017ABBF /* Views */,
+				B4F463CB2E2969C50017ABBF /* Coordinators */,
+				B4F463CE2E2969C50017ABBF /* Delegate */,
+				B4F463CF2E2969C50017ABBF /* Extensions */,
+				B4F463D02E2969C50017ABBF /* Models */,
+				B4F463D12E2969C50017ABBF /* Modules */,
+				B4F463D22E2969C50017ABBF /* Network */,
+				B4F463D62E2969C50017ABBF /* ViewModels */,
+			);
+			path = Sourses;
+			sourceTree = "<group>";
+		};
+		B4F463DA2E2969C50017ABBF /* IMDb App */ = {
+			isa = PBXGroup;
+			children = (
+				B4F463CA2E2969C50017ABBF /* Resourses */,
+				B4F463D92E2969C50017ABBF /* Sourses */,
+				B4F463D52E2969C50017ABBF /* Screen */,
+			);
+			path = "IMDb App";
+			sourceTree = "<group>";
+		};
+		C2273017DFEB82DBA45D6135 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD33321F628574B33F5E23 /* Pods_IMDb_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,19 +193,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4E833652E22A96B004C1574 /* Build configuration list for PBXNativeTarget "IMDb App" */;
 			buildPhases = (
+				1370D62967756DD6F8388A4E /* [CP] Check Pods Manifest.lock */,
 				B4E8334E2E22A969004C1574 /* Sources */,
 				B4E8334F2E22A969004C1574 /* Frameworks */,
 				B4E833502E22A969004C1574 /* Resources */,
+				B4F463942E295B4E0017ABBF /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				B4E833542E22A969004C1574 /* IMDb App */,
-			);
 			name = "IMDb App";
 			packageProductDependencies = (
+				B4E8336B2E22AB87004C1574 /* SnapKit */,
 			);
 			productName = "IMDb App";
 			productReference = B4E833522E22A969004C1574 /* IMDb App.app */;
@@ -107,6 +235,9 @@
 			);
 			mainGroup = B4E833492E22A969004C1574;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B4E8336A2E22AB87004C1574 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B4E833532E22A969004C1574 /* Products */;
 			projectDirPath = "";
@@ -122,24 +253,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F463DC2E2969C50017ABBF /* Assets.xcassets in Resources */,
+				B4F463DD2E2969C50017ABBF /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1370D62967756DD6F8388A4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IMDb App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4F463942E295B4E0017ABBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSWIFT_LINT=/usr/local/bin/swiftlint\n\n# Try alternative locations if not found\nif [[ ! -e \"${SWIFT_LINT}\" ]]; then\n    SWIFT_LINT=\"${PWD}/Pods/SwiftLint/swiftlint\"\n    if [[ ! -e \"${SWIFT_LINT}\" ]]; then\n        echo \"error: SwiftLint not found. Please install it via:\" >&2\n        echo \"brew install swiftlint\" >&2\n        echo \"or add it via CocoaPods\" >&2\n        exit 1\n    fi\nfi\n\necho \"Using SwiftLint at: ${SWIFT_LINT}\"\necho \"SwiftLint version: $(${SWIFT_LINT} version)\"\n\n# Only lint files that are under source control to avoid permission issues\ngit diff --name-only --diff-filter=d HEAD | grep '\\.swift$' | while read filename; do\n    if [[ -f \"$filename\" ]]; then\n        echo \"Linting: $filename\"\n        $SWIFT_LINT lint --path \"$filename\"\n        $SWIFT_LINT autocorrect --path \"$filename\"\n    fi\ndone\n\nexit 0\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4E8334E2E22A969004C1574 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F463DE2E2969C50017ABBF /* AppDelegate.swift in Sources */,
+				B4F463DF2E2969C50017ABBF /* SceneDelegate.swift in Sources */,
+				B4F463E02E2969C50017ABBF /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		B4F463D42E2969C50017ABBF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4F463D32E2969C50017ABBF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		B4E833662E22A96B004C1574 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 616B89E58B6FDD330FD259B8 /* Pods-IMDb App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -147,10 +338,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 942JVQXP5N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IMDb App/Info.plist";
+				INFOPLIST_FILE = "IMDb App//Resourses/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -160,6 +350,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dar.IMDb-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -168,6 +362,7 @@
 		};
 		B4E833672E22A96B004C1574 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 031EC03BABD16C93B1032BE0 /* Pods-IMDb App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -175,10 +370,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 942JVQXP5N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IMDb App/Info.plist";
+				INFOPLIST_FILE = "IMDb App//Resourses/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -188,6 +382,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dar.IMDb-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -335,6 +533,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4E8336A2E22AB87004C1574 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4E8336B2E22AB87004C1574 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4E8336A2E22AB87004C1574 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4E8334A2E22A969004C1574 /* Project object */;
 }
