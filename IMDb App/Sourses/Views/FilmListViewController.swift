@@ -55,9 +55,11 @@ final class FilmListViewController: UIViewController {
     }
 
     private func loadData() {
-        viewModel.loadFilms { [weak self] in
-            self?.films = self?.viewModel.films ?? []
-            self?.tableView.reloadData()
+            self.viewModel.loadFilms { [weak self] in
+                DispatchQueue.main.async {
+                self?.films = self?.viewModel.films ?? []
+                self?.tableView.reloadData()
+            }
         }
     }
 }

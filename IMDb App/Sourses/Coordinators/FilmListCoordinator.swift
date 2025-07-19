@@ -28,6 +28,11 @@ final class FilmListCoordinator {
     }
 
     func showFilmDetails(for film: Film) {
-        print("Selected movie: \(film.title)")
+        let detailsCoordinator = FilmDetailsCoordinator(
+            navigationController: navigationController,
+            film: film,
+            apiService: apiService
+            )
+        detailsCoordinator.start()
     }
 }
