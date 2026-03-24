@@ -89,7 +89,7 @@ final class FilmCell: UITableViewCell {
         overviewLabel.text = film.overview
 
         if let posterPath = film.posterPath,
-           let url = Endpoints.filmPosterURL(path: posterPath) {
+           let url = film.posterURL {
             posterImageView.kf.setImage(with: url)
         } else {
             posterImageView.image = UIImage(named: "placeholder")

@@ -15,7 +15,7 @@ final class AppCoordinator {
         self.navigationController = navigationController
     }
 
-    func start() {
+    @MainActor func start() {
         testAPIService()
         let apiService = APIService()
         let filmListCoordinator = FilmListCoordinator(
@@ -27,7 +27,7 @@ final class AppCoordinator {
 
     private func testAPIService() {
         let apiService = APIService()
-        apiService.fetchPopularFulms(page: 1) { result in
+        apiService.fetchPopularFilms(page: 1) { result in
             switch result {
             case .success(let films):
                 print("Complete download films: \(films.count)")

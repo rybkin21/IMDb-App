@@ -55,12 +55,58 @@ final class FilmListViewController: UIViewController {
     }
 
     private func loadData() {
-            self.viewModel.loadFilms { [weak self] in
-                DispatchQueue.main.async {
-                self?.films = self?.viewModel.films ?? []
-                self?.tableView.reloadData()
+        // Показываем лоадер
+        tableView.tableFooterView = createSpinnerFooter()
+
+        viewModel.loadFilms { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+
+                self.films = self.viewModel.films
+                self.tableView.tableFooterView = nil
+
+                if self.films.isEmpty {
+                    if let errorMsg = self.viewModel.errorMessage {
+                        self.showErrorAlert(message: errorMsg)
+                    } else {
+                        self.showEmptyState()
+                    }
+                }
+
+                self.tableView.reloadData()
             }
         }
+    }
+
+    // MARK: - Helper methods
+
+    private func createSpinnerFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.color = .systemBlue
+        spinner.center = CGPoint(x: footerView.frame.width/2, y: 40)
+        spinner.startAnimating()
+        footerView.addSubview(spinner)
+        return footerView
+    }
+
+    private func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Ошибка",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Повторить", style: .default) { [weak self] _ in
+            self?.loadData()
+        })
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+        present(alert, animated: true)
+    }
+
+    private func showEmptyState() {
+        let label = UILabel()
+        label.text = "Фильмы не найдены"
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        tableView.backgroundView = label
     }
 }
 

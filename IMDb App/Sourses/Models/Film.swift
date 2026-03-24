@@ -22,3 +22,10 @@ struct Film: Decodable {
         case posterPath = "poster_path"
     }
 }
+
+extension Film {
+    var posterURL: URL? {
+        guard let posterPath = posterPath else { return nil }
+        return Endpoints.filmPosterURL(path: posterPath)
+    }
+}

@@ -21,7 +21,7 @@ final class FilmListCoordinator {
         self.apiService = apiService
     }
 
-    func start() {
+    @MainActor func start() {
         let viewModel = FilmListViewModel(apiService: apiService, coordinator: self)
         let viewController = FilmListViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)

@@ -2,68 +2,93 @@
 //  APIService.swift
 //  IMDb App
 //
-//  Created by Ivan Rybkin on 17.07.2025.
+//  Created by Ivan Rybkin
 //
 
 import Foundation
 
 protocol APIServiceProtocol {
-    func fetchPopularFulms(page: Int, completion: @escaping (Result<[Film], Error>) -> Void)
+    func fetchPopularFilms(page: Int, completion: @escaping (Result<[Film], Error>) -> Void)
     func fetchFilmDetails(id: Int, completion: @escaping (Result<FilmDetails, Error>) -> Void)
 }
 
 final class APIService: APIServiceProtocol {
 
-    func fetchPopularFulms(page: Int, completion: @escaping (Result<[Film], any Error>) -> Void) {
+    func fetchPopularFilms(page: Int, completion: @escaping (Result<[Film], Error>) -> Void) {
         guard let url = Endpoints.popularFilms(page: page) else {
-            completion(.failure(URLError(.badURL)))
+            DispatchQueue.main.async { completion(.failure(URLError(.badURL))) }
             return
         }
 
+        performRequest(url: url, retryCount: 2, completion: completion)
+    }
+
+    // Новый приватный метод с retry
+    private func performRequest(url: URL, retryCount: Int, completion: @escaping (Result<[Film], Error>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
-                completion(.failure(error))
+                print("Network error (retry \(retryCount) left): \(error.localizedDescription)")
+
+                if retryCount > 0 {
+                    // Пробуем ещё раз через 1 секунду
+                    DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [weak self] in
+                        self?.performRequest(url: url, retryCount: retryCount - 1, completion: completion)
+                    }
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
                 return
             }
 
             guard let data = data else {
-                completion(.failure(URLError(.cannotParseResponse)))
+                DispatchQueue.main.async { completion(.failure(URLError(.cannotParseResponse))) }
                 return
             }
 
             do {
                 let response = try JSONDecoder().decode(FilmResponse.self, from: data)
-                completion(.success(response.results))
+                DispatchQueue.main.async {
+                    completion(.success(response.results))
+                }
             } catch {
-                completion(.failure(error))
+                DispatchQueue.main.async { completion(.failure(error)) }
             }
         }.resume()
     }
 
-    func fetchFilmDetails(id: Int, completion: @escaping (Result<FilmDetails, any Error>) -> Void) {
-        guard let url = URL(
-            string: "\(Endpoints.baseURL)/movie/\(id)?api_key=\(Endpoints.apiKey)&language=en-US"
-        ) else {
-            completion(.failure(URLError(.badURL)))
+    // fetchFilmDetails оставил почти без изменений, только добавил DispatchQueue.main
+    func fetchFilmDetails(id: Int, completion: @escaping (Result<FilmDetails, Error>) -> Void) {
+        guard let url = URL(string: "\(Endpoints.baseURL)/movie/\(id)?api_key=\(Endpoints.apiKey)&language=en-US") else {
+            DispatchQueue.main.async {
+                completion(.failure(URLError(.badURL)))
+            }
             return
         }
 
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
-                completion(.failure(error))
+                DispatchQueue.main.async { completion(.failure(error)) }
                 return
             }
 
             guard let data = data else {
-                completion(.failure(URLError(.cannotParseResponse)))
+                DispatchQueue.main.async { completion(.failure(URLError(.cannotParseResponse))) }
                 return
             }
 
             do {
-                let response = try JSONDecoder().decode(FilmDetails.self, from: data)
-                completion(.success(response))
+                let details = try JSONDecoder().decode(FilmDetails.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(details))
+                }
             } catch {
-                completion(.failure(error))
+                print("Details decoding error: \(error)")
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
         }.resume()
     }
